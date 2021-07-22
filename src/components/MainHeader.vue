@@ -98,11 +98,13 @@ header {
   line-height: 1.25rem;
   text-align: center;
 
-  max-width: 60rem;
+  max-width: 75rem;
   width: 100%;
+  height: 68px;
   margin: 0 auto;
-  padding: 2rem 0 0 0;
+  padding: 0 7.5rem;
   user-select: none;
+  background-color: #fff;
 }
 
 .logo {
@@ -187,7 +189,7 @@ header {
     margin-left: 1.5rem;
 
     a {
-      color: #3a3c3e;
+      color: #223355;
       padding: 0.5rem;
     }
 
