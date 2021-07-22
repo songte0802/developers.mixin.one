@@ -29,7 +29,7 @@ export default {
       user_info: {},
       app_list: [],
       active_app: {},
-      apps_property: {}
+      apps_property: {},
     }
   },
   watch: {
@@ -40,7 +40,7 @@ export default {
         let { app_number } = this.$route.params
         update_active_app.call(this, app_number)
       }
-    }
+    },
   },
   methods: {
     back() {
@@ -89,7 +89,7 @@ export default {
     click_user() {
       this.show_click_user = !this.show_click_user
       if (this.show_click_user) {
-        document.onclick = () => this.show_click_user = false
+        document.onclick = () => (this.show_click_user = false)
       }
     },
     click_sign_out() {
@@ -104,9 +104,10 @@ export default {
     },
     click_buy_item(count) {
       let trace = tools.getUUID()
-      let amount = this.tmp_money + (count - 1) * Number(this.apps_property.price)
+      let amount =
+        this.tmp_money + (count - 1) * Number(this.apps_property.price)
       window.location.href = `https://mixin.one/pay?recipient=fbd26bc6-3d04-4964-a7fe-a540432b16e2&asset=c94ac88f-4671-3976-b60a-09064f1811e8&amount=${amount}&trace=${trace}&memo=PAY_FOR_APP`
-    }
+    },
   },
   async mounted() {
     this.is_mobile = document.documentElement.clientWidth < 769
@@ -114,7 +115,7 @@ export default {
       this.is_mobile = document.documentElement.clientWidth < 769
     }
     await init_page.call(this)
-  }
+  },
 }
 
 async function init_page() {
@@ -144,7 +145,6 @@ async function axios_get_app_list(app_number) {
   return app_number
 }
 
-
 function mounted_select_active_router() {
   switch (this.$route.name) {
     case 'dashboard':
@@ -162,14 +162,16 @@ function mounted_select_active_router() {
 
 function update_active_app(app_number) {
   if (!app_number) return
-  let active_index = this.app_list.findIndex(item => item.app_number === app_number)
+  let active_index = this.app_list.findIndex(
+    (item) => item.app_number === app_number
+  )
   this.active_app = this.app_list[active_index] || {}
 }
 
 function jump_to_uri(uri, has_app_number) {
   this.tmp_component = 'information'
   this.nav_header_index = 0
-  uri = has_app_number ? (uri + '/' + this.active_app.app_number) : uri
+  uri = has_app_number ? uri + '/' + this.active_app.app_number : uri
   if (uri === tmp_uri) return
   tmp_uri = uri
   this.$router.push(tmp_uri)

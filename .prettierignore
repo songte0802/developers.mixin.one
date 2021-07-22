@@ -1,0 +1,9 @@
+.prettierignore
+.gitignore
+dist
+LICENSE
+yarn.lock
+.github/
+node_modules/
+**/*.html
+*.md

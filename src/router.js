@@ -7,32 +7,32 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('./pages/home')
+    component: () => import('./pages/home'),
   },
   {
     path: '/auth',
     name: 'Auth',
-    component: () => import('./components/Auth')
+    component: () => import('./components/Auth'),
   },
   {
     path: '/news',
     name: 'news',
-    component: () => import('./pages/home/News')
+    component: () => import('./pages/home/News'),
   },
   {
     path: '/cases',
     name: 'cases',
-    component: () => import('./pages/home/Cases')
+    component: () => import('./pages/home/Cases'),
   },
   {
     path: '/news/:filename',
     name: 'news_detail',
-    component: () => import('./pages/home/Detail')
+    component: () => import('./pages/home/Detail'),
   },
   {
     path: '/cases/:filename',
     name: 'cases_detail',
-    component: () => import('./pages/home/Detail')
+    component: () => import('./pages/home/Detail'),
   },
   {
     path: '/document*',
@@ -61,8 +61,8 @@ const routes = [
   },
   {
     path: '*',
-    component: () => import('./404')
-  }
+    component: () => import('./404'),
+  },
 ]
 
 const router = new VueRouter({ routes, mode: 'history' })

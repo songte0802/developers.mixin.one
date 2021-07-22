@@ -122,7 +122,6 @@ button {
     font-size: 0.88rem;
   }
 
-
   input {
     position: absolute;
     width: 100%;
@@ -144,7 +143,6 @@ button {
   display: flex;
   justify-content: space-between;
   width: 100%;
-
 
   .item:first-child {
     margin-right: 1.125rem;
@@ -174,7 +172,6 @@ textarea {
 .none {
   display: none;
 }
-
 
 @media screen and (max-width: 70rem) {
   .top {

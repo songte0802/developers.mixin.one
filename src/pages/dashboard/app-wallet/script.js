@@ -5,15 +5,16 @@ import BigNumber from 'bignumber.js'
 
 export default {
   components: {
-    WithdrawalModal, UpdateToken
+    WithdrawalModal,
+    UpdateToken,
   },
   props: {
     active_app: {
       type: Object,
       default() {
         return {}
-      }
-    }
+      },
+    },
   },
   data() {
     return {
@@ -22,13 +23,13 @@ export default {
       submit_form: {
         session_id: '',
         pin_token: '',
-        private_key: ''
+        private_key: '',
       },
       assets_list: [],
       loading: false,
       whole_loading: false,
       show_withdrawal: false,
-      active_asset: {}
+      active_asset: {},
     }
   },
   watch: {
@@ -36,7 +37,7 @@ export default {
       if (this.$ls.get(val.app_id)) {
         _get_assets_list.call(this)
       }
-    }
+    },
   },
   methods: {
     close_modal() {
@@ -50,7 +51,7 @@ export default {
     },
     update_list() {
       _get_assets_list.call(this, true)
-    }
+    },
   },
   mounted() {
     if (this.$ls.get(this.active_app.app_id)) {
@@ -82,7 +83,10 @@ async function _get_assets_list() {
       this.$ls.rm(this.active_app.app_id)
     }
   } catch (e) {
-    this.$message.error({ message: this.$t("message.errors.401"), showClose: true })
+    this.$message.error({
+      message: this.$t('message.errors.401'),
+      showClose: true,
+    })
     this.is_edited = false
     this.open_edit_modal = true
     this.$ls.rm(this.active_app.app_id)

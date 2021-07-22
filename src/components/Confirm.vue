@@ -2,10 +2,10 @@
   <div v-if="confirm_modal" class="modal-mask">
     <div class="confirm-content">
       <img @click="click_cancel" src="@/assets/img/svg/close.svg" />
-      <h3>{{confirm_content}}</h3>
+      <h3>{{ confirm_content }}</h3>
       <div class="btns">
-        <button @click="click_cancel">{{$t('button.cancel')}}</button>
-        <button @click="click_confirm">{{$t('button.ok')}}</button>
+        <button @click="click_cancel">{{ $t('button.cancel') }}</button>
+        <button @click="click_confirm">{{ $t('button.ok') }}</button>
       </div>
     </div>
   </div>
@@ -16,23 +16,23 @@ export default {
   props: {
     confirm_content: {
       type: String,
-      default: ""
+      default: '',
     },
     confirm_modal: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   methods: {
     click_confirm() {
-      this.$emit("confirm");
-      this.$emit("close_modal");
+      this.$emit('confirm')
+      this.$emit('close_modal')
     },
     click_cancel() {
-      this.$emit("close_modal");
-    }
-  }
-};
+      this.$emit('close_modal')
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

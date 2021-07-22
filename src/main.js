@@ -27,7 +27,7 @@ Vue.prototype._const = _const
 Vue.prototype.$ls = ls
 
 new Vue({
-  render: h => h(App),
+  render: (h) => h(App),
   router,
-  i18n
+  i18n,
 }).$mount('#app')

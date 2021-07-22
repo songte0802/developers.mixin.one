@@ -1,6 +1,6 @@
 module.exports = {
   productionSourceMap: false,
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.module
       .rule('md')
       .test(/\.md/)
@@ -10,5 +10,5 @@ module.exports = {
       .use('markdown-loader')
       .loader('markdown-loader')
       .end()
-  }
+  },
 }

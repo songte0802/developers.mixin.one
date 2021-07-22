@@ -11,8 +11,12 @@
           class="mixin-id"
         />
         <div class="icon">
-          <label>{{$t('information.icon')}}</label>
-          <Croppie ref="croppie" :icon_url="active_app.icon_url" :toggle_app="toggle_app"></Croppie>
+          <label>{{ $t('information.icon') }}</label>
+          <Croppie
+            ref="croppie"
+            :icon_url="active_app.icon_url"
+            :toggle_app="toggle_app"
+          ></Croppie>
         </div>
       </div>
       <div class="edit-main f">
@@ -53,7 +57,7 @@
       </div>
     </div>
     <div class="des">
-      <label>{{$t('information.description')}}</label>
+      <label>{{ $t('information.description') }}</label>
       <textarea
         @input="check_is_finished"
         :placeholder="$t('information.description_desc')"
@@ -61,23 +65,28 @@
       ></textarea>
     </div>
     <div class="des">
-      <label>{{$t('information.resource_patterns')}}</label>
-      <textarea :placeholder="$t('information.resource_patterns_desc')" v-model="resource_patterns"></textarea>
+      <label>{{ $t('information.resource_patterns') }}</label>
+      <textarea
+        :placeholder="$t('information.resource_patterns_desc')"
+        v-model="resource_patterns"
+      ></textarea>
     </div>
-    <div @click="immersive_status=!immersive_status" class="des immersive">
+    <div @click="immersive_status = !immersive_status" class="des immersive">
       <i v-if="!immersive_status" />
       <img v-else src="@/assets/img/ic_v.png" />
-      <span>{{$t('information.immersive')}}</span>
+      <span>{{ $t('information.immersive') }}</span>
     </div>
     <button
       @click="submit_to_database"
-      :class="['primary',!can_save ? 'not-finished' : '' ]"
-    >{{$t('button.save')}}</button>
+      :class="['primary', !can_save ? 'not-finished' : '']"
+    >
+      {{ $t('button.save') }}
+    </button>
   </div>
 </template>
 
-<script type='text/javascript' charset='utf-8' src='./script.js'></script>
+<script type="text/javascript" charset="utf-8" src="./script.js"></script>
 
-<style lang='scss' scoped>
-@import "./style.scss";
+<style lang="scss" scoped>
+@import './style.scss';
 </style>

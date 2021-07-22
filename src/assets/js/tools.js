@@ -1,7 +1,7 @@
 import forge from 'node-forge'
 import jwt from 'jsonwebtoken'
 import { v4 as uuid } from 'uuid'
-import { Uint64LE } from "int64-buffer"
+import { Uint64LE } from 'int64-buffer'
 import crypto from 'crypto'
 import crypto_scalarmult from './ed25519'
 
@@ -10,7 +10,9 @@ export default {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]')
     const regex = new RegExp('[\\?&]' + name + '=([^&#]*)')
     const results = regex.exec(window.location.search)
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '))
+    return results === null
+      ? ''
+      : decodeURIComponent(results[1].replace(/\+/g, ' '))
   },
   getJwtToken({ uid, sid, privateKey }, method, url, body = '') {
     return signAuthenticationToken(uid, sid, privateKey, method, url, body)
@@ -53,14 +55,21 @@ export default {
 function reloadTheme() {
   switch (environment()) {
     case 'iOS':
-      return window.webkit.messageHandlers.reloadTheme && window.webkit.messageHandlers.reloadTheme.postMessage('')
+      return (
+        window.webkit.messageHandlers.reloadTheme &&
+        window.webkit.messageHandlers.reloadTheme.postMessage('')
+      )
     case 'Android':
       return window.MixinContext.reloadTheme()
   }
 }
 
 function environment() {
-  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.MixinContext) {
+  if (
+    window.webkit &&
+    window.webkit.messageHandlers &&
+    window.webkit.messageHandlers.MixinContext
+  ) {
     return 'iOS'
   }
   if (window.MixinContext && window.MixinContext.getContext) {
@@ -70,10 +79,12 @@ function environment() {
 }
 
 function signAuthenticationToken(uid, sid, privateKey, method, uri, body, scp) {
-  if (uri.startsWith('https://api.mixin.one')) uri = uri.replace('https://api.mixin.one', '')
-  if (uri.startsWith('https://mixin-api.zeromesh.net')) uri = uri.replace('https://mixin-api.zeromesh.net', '')
+  if (uri.startsWith('https://api.mixin.one'))
+    uri = uri.replace('https://api.mixin.one', '')
+  if (uri.startsWith('https://mixin-api.zeromesh.net'))
+    uri = uri.replace('https://mixin-api.zeromesh.net', '')
   method = method.toLocaleUpperCase()
-  if (typeof (body) === "object") body = JSON.stringify(body)
+  if (typeof body === 'object') body = JSON.stringify(body)
   let issuedAt = Math.floor(Date.now() / 1000)
   let md = forge.md.sha256.create()
   let _privateKey = toBuffer(privateKey, 'base64')
@@ -85,20 +96,24 @@ function signAuthenticationToken(uid, sid, privateKey, method, uri, body, scp) {
     exp: issuedAt + 3600,
     jti: uuid(),
     sig: md.digest().toHex(),
-    scp: scp || 'FULL'
+    scp: scp || 'FULL',
   }
-  return _privateKey.length === 64 ? getEd25519Sign(payload, _privateKey) : jwt.sign(payload, privateKey, { algorithm: 'RS512' })
+  return _privateKey.length === 64
+    ? getEd25519Sign(payload, _privateKey)
+    : jwt.sign(payload, privateKey, { algorithm: 'RS512' })
 }
 
 function getEd25519Sign(payload, privateKey) {
-  const header = toBuffer({ alg: "EdDSA", typ: "JWT" }).toString('base64')
+  const header = toBuffer({ alg: 'EdDSA', typ: 'JWT' }).toString('base64')
   payload = base64rawUrl(toBuffer(payload))
   const result = [header, payload]
-  const sign = base64rawUrl(forge.pki.ed25519.sign({
-    message: result.join('.'),
-    encoding: 'utf8',
-    privateKey
-  }))
+  const sign = base64rawUrl(
+    forge.pki.ed25519.sign({
+      message: result.join('.'),
+      encoding: 'utf8',
+      privateKey,
+    })
+  )
   result.push(sign)
   return result.join('.')
 }
@@ -109,21 +124,28 @@ function toBuffer(content, encoding = 'utf8') {
 }
 
 function base64rawUrl(buffer) {
-  return buffer.toString('base64').replace(/\=/g, '').replace(/\+/g, '-').replace(/\//g, '_')
+  return buffer
+    .toString('base64')
+    .replace(/\=/g, '')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
 }
 
 const blockSize = 16
 function signEncryptedPin(pin, pinToken, sessionId, privateKey, iterator) {
   let _privateKey = toBuffer(privateKey, 'base64')
-  let pinKey = _privateKey.length === 64 ? signEncryptEd25519PIN(pinToken, privateKey) : signPin(pinToken, privateKey, sessionId)
-  let time = new Uint64LE(Date.now() / 1000 | 0).toBuffer()
-  if (iterator === undefined || iterator === "") {
+  let pinKey =
+    _privateKey.length === 64
+      ? signEncryptEd25519PIN(pinToken, privateKey)
+      : signPin(pinToken, privateKey, sessionId)
+  let time = new Uint64LE((Date.now() / 1000) | 0).toBuffer()
+  if (iterator === undefined || iterator === '') {
     iterator = Date.now() * 1000000
   }
   iterator = new Uint64LE(iterator).toBuffer()
   pin = Buffer.from(pin, 'utf8')
   let buf = Buffer.concat([pin, Buffer.from(time), Buffer.from(iterator)])
-  const padding = blockSize - buf.length % blockSize
+  const padding = blockSize - (buf.length % blockSize)
   const paddingArray = []
   for (let i = 0; i < padding; i++) {
     paddingArray.push(padding)
@@ -143,7 +165,7 @@ function signPin(pinToken, privateKey, sessionId) {
   privateKey = forge.pki.privateKeyFromPem(privateKey)
   const pinKey = privateKey.decrypt(pinToken, 'RSA-OAEP', {
     md: forge.md.sha256.create(),
-    label: sessionId
+    label: sessionId,
   })
   return hexToBytes(forge.util.binary.hex.encode(pinKey))
 }

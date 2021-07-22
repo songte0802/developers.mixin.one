@@ -15,14 +15,14 @@ export default {
   props: {
     show: {
       type: Boolean,
-      default: false
+      default: false,
     },
     loading: {
       type: Boolean,
-      default: false
-    }
-  }
-};
+      default: false,
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,9 @@
 <template>
   <div
     class="dashboard-app-header"
-    :style="has_shadow? 'box-shadow: 0px 1px 4px 0px rgba(28, 77, 174, 0.1);':''"
+    :style="
+      has_shadow ? 'box-shadow: 0px 1px 4px 0px rgba(28, 77, 174, 0.1);' : ''
+    "
   >
     <span class="app-header-left">
       <slot name="left"></slot>
@@ -17,18 +19,18 @@
 
 <script>
 export default {
-  name: "MHeader",
+  name: 'MHeader',
   props: {
     has_shadow: {
       type: Number,
-      default: 0
+      default: 0,
     },
     has_back: {
       type: Boolean,
-      default: false
-    }
-  }
-};
+      default: false,
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

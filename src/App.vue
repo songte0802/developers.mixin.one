@@ -6,15 +6,15 @@
 
 <script>
 export default {
-  name: "app",
+  name: 'app',
   mounted() {
-    window._vm = this;
-  }
-};
+    window._vm = this
+  },
+}
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/theme.scss";
+@import '@/assets/scss/theme.scss';
 
 html,
 body {

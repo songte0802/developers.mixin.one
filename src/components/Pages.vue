@@ -34,61 +34,62 @@
       :key="i"
       @click="changePage(i)"
       :class="i === currentPage ? 'active' : ''"
-    >{{i}}</span>
+      >{{ i }}</span
+    >
   </div>
 </template>
 
 <script>
 export default {
-  name: "Pages",
+  name: 'Pages',
   props: {
     align: {
       type: String,
-      default: "center"
+      default: 'center',
     },
     currentPage: {
       type: Number,
-      default: 1
+      default: 1,
     },
     split: {
       type: Number,
-      default: 6
+      default: 6,
     },
     allPage: {
       type: Number,
-      default: 1
-    }
+      default: 1,
+    },
   },
   data() {
     return {
-      page: ""
-    };
+      page: '',
+    }
   },
   computed: {
     pages() {
-      return Math.ceil(this.allPage / this.split);
-    }
+      return Math.ceil(this.allPage / this.split)
+    },
   },
   methods: {
     getPages(i) {
-      let { currentPage, pages, split } = this;
-      let page = i + currentPage - 3;
+      let { currentPage, pages, split } = this
+      let page = i + currentPage - 3
       switch (true) {
         case [1, 2].includes(currentPage):
-          return i;
+          return i
         case currentPage >= 3 && currentPage < pages - 3:
-          return page;
+          return page
         case currentPage >= pages - 3:
-          return pages - split + i;
+          return pages - split + i
       }
     },
     changePage(page) {
       if (page >= 1 && page <= this.pages) {
-        this.$emit("page", page);
+        this.$emit('page', page)
       }
-    }
-  }
-};
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

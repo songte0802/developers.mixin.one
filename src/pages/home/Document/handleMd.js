@@ -1,4 +1,4 @@
-import "github-markdown-css"
+import 'github-markdown-css'
 
 export function getPageContent(locale) {
   try {
@@ -25,7 +25,7 @@ export function getPathByRouter(originRouter, documentList) {
 }
 
 function iterate(list, originRouter, _path) {
-  let targetRouter = ""
+  let targetRouter = ''
   for (let i = 0; i < list.length; i++) {
     let { router, path, child } = list[i]
     if (originRouter === path) {

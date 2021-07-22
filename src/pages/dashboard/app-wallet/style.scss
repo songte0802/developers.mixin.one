@@ -77,7 +77,6 @@
   margin: 0 auto;
 }
 
-
 .list-bottom-tips {
   width: 62rem;
   max-width: 100%;
@@ -127,7 +126,6 @@
   }
 }
 
-
 .num {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -147,11 +145,10 @@
   min-width: 5.8125rem;
   font-size: 0.9375rem;
 
-  &[disabled="disabled"] {
+  &[disabled='disabled'] {
     background: rgba(50, 119, 255, 0.9);
   }
 }
-
 
 @media screen and (max-width: 62.4375rem) and (min-width: 48rem) {
   .list .item {
@@ -167,7 +164,7 @@
 
     h3 {
       font-weight: 500;
-      font-size: .875rem;
+      font-size: 0.875rem;
       margin-bottom: 1.5rem;
     }
 
@@ -202,7 +199,7 @@
     min-width: 17.5rem;
 
     div {
-      padding-left: .5rem;
+      padding-left: 0.5rem;
       flex-direction: column;
       align-items: flex-start;
       transform: translateY(0.0625rem);
@@ -211,7 +208,7 @@
 
   .num {
     max-width: 100%;
-    font-size: .88rem;
+    font-size: 0.88rem;
   }
 
   .symbol {

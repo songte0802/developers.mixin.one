@@ -13,5 +13,5 @@ export default {
   },
   rm(key) {
     return window.localStorage.removeItem(key)
-  }
+  },
 }

@@ -24,7 +24,6 @@
   }
 }
 
-
 .content {
   width: 100%;
   max-width: 52rem;
@@ -33,13 +32,11 @@
   padding: 4rem 0;
 }
 
-
 @media screen and (max-width: 75rem) and (min-width: 60.0625rem) {
   .content {
     max-width: 40rem;
   }
 }
-
 
 @media screen and (max-width: 60rem) {
   .content {

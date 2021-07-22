@@ -2,22 +2,22 @@ runtime: python38
 service: developers-mixin-one
 
 handlers:
-- url: /img
-  static_dir: /img
+  - url: /img
+    static_dir: /img
 
-- url: /css
-  static_dir: /css
+  - url: /css
+    static_dir: /css
 
-- url: /js
-  static_dir: /js
+  - url: /js
+    static_dir: /js
 
-- url: /fonts
-  static_dir: /fonts
+  - url: /fonts
+    static_dir: /fonts
 
-- url: /favicon.ico
-  static_files: /favicon.ico
-  upload: /favicon.ico
+  - url: /favicon.ico
+    static_files: /favicon.ico
+    upload: /favicon.ico
 
-- url: /.*
-  static_files: /index.html
-  upload: /index.html
+  - url: /.*
+    static_files: /index.html
+    upload: /index.html
