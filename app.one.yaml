@@ -3,21 +3,21 @@ service: developers-mixin-one
 
 handlers:
 - url: /img
-  static_dir: developers/img
+  static_dir: /img
 
 - url: /css
-  static_dir: developers/css
+  static_dir: /css
 
 - url: /js
-  static_dir: developers/js
+  static_dir: /js
 
 - url: /fonts
-  static_dir: developers/fonts
+  static_dir: /fonts
 
 - url: /favicon.ico
-  static_files: developers/favicon.ico
-  upload: developers/favicon.ico
+  static_files: /favicon.ico
+  upload: /favicon.ico
 
 - url: /.*
-  static_files: developers/index.html
-  upload: developers/index.html
+  static_files: /index.html
+  upload: /index.html
