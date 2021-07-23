@@ -1,51 +1,35 @@
 <template>
   <footer>
     <div class="container">
-      <div class="community">
-        <h6>{{ $t('home.footer.community.title') }}</h6>
-        <ul>
-          <li
-            v-for="(value, key) in $t('home.footer.community.list')"
-            :key="key"
-          >
-            <a :href="value.href">
-              <div>
-                <img
-                  :class="key"
-                  :src="require(`@/assets/img/footer/${key}.png`)"
-                />
-              </div>
-              <span>{{ value.name }}</span>
-            </a>
-          </li>
-        </ul>
+      <div class="resources">
+        <a
+          v-for="(item, index) in $t('home.footer.resources.list')"
+          :key="index"
+          :href="item.href"
+          >{{ item.name }}</a
+        >
+        <li class="i18n">
+          <div @click="toggleLocale" class="locale">
+            {{ lang === 'zh' ? '中文' : 'English' }}
+            <ul v-if="showLocale" class="select">
+              <li @click="clickChangeLocale('zh')">中文</li>
+              <li @click="clickChangeLocale('en')">English</li>
+            </ul>
+          </div>
+        </li>
       </div>
-      <div :class="['resources', lang]">
-        <h6>{{ $t('home.footer.resources.title') }}</h6>
-        <ul>
-          <a
-            v-for="(item, index) in $t('home.footer.resources.list')"
-            :key="index"
-            :href="item.href"
-            >{{ item.name }}</a
-          >
-        </ul>
-      </div>
-
-      <div class="others">
-        <h6>{{ $t('home.footer.others.title') }}</h6>
-        <ul>
-          <li class="i18n">
-            <div @click="toggleLocale" class="locale">
-              {{ lang === 'zh' ? '中文' : 'English' }}
-              <ul v-if="showLocale" class="select">
-                <li @click="clickChangeLocale('zh')">中文</li>
-                <li @click="clickChangeLocale('en')">English</li>
-              </ul>
+      <ul class="community">
+        <li v-for="(value, key) in $t('home.footer.community.list')" :key="key">
+          <a :href="value.href">
+            <div>
+              <img
+                :class="key"
+                :src="require(`@/assets/img/footer/${key}.png`)"
+              />
             </div>
-          </li>
-        </ul>
-      </div>
+          </a>
+        </li>
+      </ul>
     </div>
   </footer>
 </template>
@@ -77,42 +61,23 @@ export default {
 <style lang="scss" scoped>
 footer {
   font-family: sans-serif;
-  background: #eef1f9;
+  background: #fafcff;
   margin-top: 300px;
   padding: 110px 0 30px 0;
-  display: flex;
-  justify-content: center;
 }
 
 .container {
-  display: flex;
-  justify-content: space-around;
   max-width: 63.75rem;
   width: 100%;
   overflow: hidden;
-}
-
-h6 {
-  font-size: 22px;
-  line-height: 26px;
-  margin-bottom: 3.75rem;
-
-  color: #333333;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .community {
-  min-width: 20rem;
-
-  ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  li:nth-child(4) {
-    div {
-      padding-top: 0.3rem;
-    }
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   a {
     display: flex;
@@ -121,7 +86,7 @@ h6 {
     cursor: pointer;
 
     div {
-      width: 40px;
+      width: 60px;
     }
 
     .twitter {
@@ -129,29 +94,35 @@ h6 {
     }
 
     .github {
-      width: 26px;
+      width: 23px;
     }
 
     .facebook {
-      width: 15px;
-      height: 25px;
+      width: 26px;
     }
 
     .youtube {
-      width: 30px;
+      width: 24px;
     }
 
     .reddit {
-      width: 27px;
+      width: 26px;
     }
 
     .telegram {
-      width: 25px;
+      width: 24px;
     }
   }
 }
 
 .resources {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  line-height: 19px;
+
   &.en {
     min-width: 11rem;
   }
@@ -163,18 +134,17 @@ h6 {
   a {
     cursor: pointer;
     display: block;
-    margin-bottom: 3.5rem;
+    color: rgba(34, 51, 85, 0.8);
+    margin-right: 24px;
   }
 }
 
 .i18n {
   .locale {
     display: inline-block;
-    padding: 0 40px 75px 0px;
-
     cursor: pointer;
-
     position: relative;
+    color: rgba(34, 51, 85, 0.8);
 
     &::before {
       display: block;
@@ -183,8 +153,8 @@ h6 {
       height: 0;
       position: absolute;
       top: 7px;
-      right: 15px;
-      border-width: 5px;
+      right: -12px;
+      border-width: 4px;
       border-style: solid;
       border-color: #000 transparent transparent transparent;
     }
@@ -192,11 +162,13 @@ h6 {
 
   .select {
     background-color: rgba($color: #fff, $alpha: 0.5);
-    width: 100%;
+    min-width: 70px;
     position: absolute;
     left: 0;
     top: 1.6rem;
     border-radius: 5px;
+    border: 1px solid #eee;
+    background: #fafcff;
 
     li {
       text-align: center;

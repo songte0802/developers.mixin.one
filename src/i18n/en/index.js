@@ -66,21 +66,21 @@ export default {
       community: {
         title: 'Community',
         list: {
+          facebook: { name: 'Facebook', href: 'https://fb.com/MixinMessenger' },
           twitter: {
             name: 'Twitter',
             href: 'https://twitter.com/Mixin_Network',
           },
+          reddit: { name: 'Reddit', href: 'https://www.reddit.com/r/mixin' },
+          telegram: { name: 'Telegram', href: 'https://t.me/MixinCommunity' },
           github: {
             name: 'Github',
             href: 'https://github.com/MixinNetwork/developers.mixin.one',
           },
-          facebook: { name: 'Facebook', href: 'https://fb.com/MixinMessenger' },
           youtube: {
             name: 'Youtube',
             href: 'https://www.youtube.com/channel/UCLWQ94gw7wRK-S5qy4LAVrA',
           },
-          reddit: { name: 'Reddit', href: 'https://www.reddit.com/r/mixin' },
-          telegram: { name: 'Telegram', href: 'https://t.me/MixinCommunity' },
         },
       },
       resources: {
@@ -93,6 +93,10 @@ export default {
           {
             name: 'WHITEPAPER',
             href: 'https://mixin.one/assets/Mixin-Draft-2018-07-01.pdf',
+          },
+          {
+            name: 'API',
+            href: 'https://developers.mixin.one/document/bot/api/profile',
           },
         ],
       },
