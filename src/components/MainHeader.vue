@@ -1,42 +1,44 @@
 <template>
   <header>
-    <a href="/" class="logo">
-      <img src="@/assets/img/svg/logo.svg" />
-      <span>{{ $t('home.title') }}</span>
-    </a>
+    <div class="header">
+      <a href="/" class="logo">
+        <img src="@/assets/img/svg/logo.svg" />
+        <span>{{ $t('home.title') }}</span>
+      </a>
 
-    <div @click.stop :class="['search', focusSearch && 'focus']">
-      <img class="icon" src="@/assets/img/svg/search.svg" alt="" />
-      <input
-        ref="search"
-        type="text"
-        v-model="search"
-        placeholder="Search"
-        @keydown.enter="handleSearchEnter"
+      <div @click.stop :class="['search', focusSearch && 'focus']">
+        <img class="icon" src="@/assets/img/svg/search.svg" alt="" />
+        <input
+          ref="search"
+          type="text"
+          v-model="search"
+          placeholder="Search"
+          @keydown.enter="handleSearchEnter"
+        />
+        <i :class="search ? 'btn-close' : 'none'" @click="search = ''" />
+      </div>
+
+      <img
+        @click.stop="toggleSearch"
+        class="search-icon"
+        src="@/assets/img/svg/search_black.svg"
+        alt=""
       />
-      <i :class="search ? 'btn-close' : 'none'" @click="search = ''" />
+      <img
+        @click.stop="toggleMenus"
+        class="menus-icon"
+        src="@/assets/img/svg/menus.svg"
+      />
+      <ul :class="['menus', showMenus ? 'show' : '']">
+        <li
+          v-for="(item, index) in $t('home.menus')"
+          :key="index"
+          :class="$route.path.startsWith(routerList[index]) ? 'acvie' : ''"
+        >
+          <a :href="routerList[index]">{{ item }}</a>
+        </li>
+      </ul>
     </div>
-
-    <img
-      @click.stop="toggleSearch"
-      class="search-icon"
-      src="@/assets/img/svg/search_black.svg"
-      alt=""
-    />
-    <img
-      @click.stop="toggleMenus"
-      class="menus-icon"
-      src="@/assets/img/svg/menus.svg"
-    />
-    <ul :class="['menus', showMenus ? 'show' : '']">
-      <li
-        v-for="(item, index) in $t('home.menus')"
-        :key="index"
-        :class="$route.path.startsWith(routerList[index]) ? 'acvie' : ''"
-      >
-        <a :href="routerList[index]">{{ item }}</a>
-      </li>
-    </ul>
   </header>
 </template>
 
@@ -89,6 +91,11 @@ export default {
 
 <style lang="scss" scoped>
 header {
+  background-color: #fff;
+  box-shadow: 0px 4px 14px rgba(18, 43, 91, 0.04);
+}
+
+.header {
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: center;
@@ -104,7 +111,6 @@ header {
   margin: 0 auto;
   padding: 0 7.5rem;
   user-select: none;
-  background-color: #fff;
 }
 
 .logo {
