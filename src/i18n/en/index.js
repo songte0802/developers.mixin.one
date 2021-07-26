@@ -6,28 +6,37 @@ export default {
     main: {
       title: 'Build any decentralized applications on Mixin',
       info: [
-        '<b>Fast&nbsp;-&nbsp;</b>More than 1,000,000 TPS capacity with a final confirmation time of under 1 second.',
-        ' <b>Developer Friendly&nbsp;-&nbsp;</b>Standard REST API interface with any language.',
-        '<b>Powerful&nbsp;-&nbsp;</b>Supported 28 blockchians, such as BTC, ETH, XMR.',
         '<b>Secure&nbsp;-&nbsp;</b>All assets are stored in PoS-BFT-DAG distributed network',
+        '<b>Fast&nbsp;-&nbsp;</b>More than 1,000,000 TPS capacity with a final confirmation time of under 1 second.',
+        '<b>Powerful&nbsp;-&nbsp;</b>Supported 32 blockchians, such as BTC, ETH, XMR.',
         '<b>Free&nbsp;-&nbsp;</b>No transaction fee.',
         '<b>Privacy&nbsp;-&nbsp;</b>End to end encrypted messages',
-        '<b>Multisig&nbsp;-&nbsp;</b>Safer management of large assets',
-        '<b>User Friendly&nbsp;-&nbsp;</b>Secured by 6 digit D3M-PIN',
       ],
-      button: ['Get Started', 'Dashboard'],
+      button: ['GET STARTED'],
     },
     documentation: {
       title: 'Documentation',
-      left: [
+      docs: [
         {
-          title: 'Quickstart using the Golang',
+          title: 'Mainnet',
           info: 'F1EX, a stand alone exchange product by Fox.ONE, with low token-issuance cost, high performance, rich managment dashboard, multi-chains support and greate eco-system.',
           button: 'Quickstart',
           href: '#',
         },
         {
-          title: 'Quickstart using the Golang',
+          title: 'Wallet',
+          info: 'F1EX, a stand alone exchange product by Fox.ONE, with low token-issuance cost, high performance, rich managment dashboard, multi-chains support and greate eco-system.',
+          button: 'Quickstart',
+          href: '#',
+        },
+        {
+          title: 'Bot',
+          info: 'F1EX, a stand alone exchange product by Fox.ONE, with low token-issuance cost, high performance, rich managment dashboard, multi-chains support and greate eco-system.',
+          button: 'Quickstart',
+          href: '#',
+        },
+        {
+          title: 'Academy',
           info: 'F1EX, a stand alone exchange product by Fox.ONE, with low token-issuance cost, high performance, rich managment dashboard, multi-chains support and greate eco-system.',
           button: 'Quickstart',
           href: '#',
@@ -116,7 +125,7 @@ export default {
       },
     },
     button: {
-      readmore: 'Read More',
+      readmore: 'READ MORE',
     },
   },
   search: {
@@ -228,6 +237,7 @@ export default {
         title: 'ETF - BOX',
         filename: 'etf-box',
         img: 'etf-box.png',
+        date: '2020/5/11',
         info: 'BOX is a completely open and transparent fund product designed by Li Xiaolai. The name of BOX consists of three underlying assets, which are BTC, EOS, and XIN. The first letter B is coming from Bitcoin, and the last letter is from XIN, which becomes "BOX". Each BOX contains 0.0001 BTC, 0.15 EOS and 0.0008 XIN. <a href="/cases/etf-box">more.</a>',
       },
       {
@@ -274,6 +284,7 @@ export default {
       },
       {
         title: 'Web Multi-currenty Wallet',
+        clamp: 4,
         filename: 'wallet-web',
         img: 'wallet-web.png',
         date: '2020/05/04',

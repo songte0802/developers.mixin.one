@@ -8,26 +8,35 @@ export default {
       info: [
         '<b>安全&nbsp;-&nbsp;</b>所有资产都安全的存储在 PoS-BFT-DAG 分布式网络中',
         '<b>高性能&nbsp;-&nbsp;</b>超过 1,000,000 TPS 的容量，数据最终确认小于 1 秒',
-        '<b>隐私&nbsp;-&nbsp;</b>交易使用 CryptoNote 协议，聊天使用 Signal 协议',
         '<b>强大&nbsp;-&nbsp;</b>支持 32 条公链，例如 BTC，ETH，EOS，DASH，ZEC，XMR 等。',
         '<b>免费&nbsp;-&nbsp;</b>没有交易手续费。',
-        '<b>便捷&nbsp;-&nbsp;</b>6 位数字密码轻松管理资产',
-        '<b>多重签名&nbsp;-&nbsp;</b>适用于多人团队共同管理大额数字资产和 C2C 交易',
-        '<b>开发友好&nbsp;-&nbsp;</b>标准 REST API 接口，用你熟悉的语言快速开发',
+        '<b>隐私&nbsp;-&nbsp;</b>交易使用 CryptoNote 协议，聊天使用 Signal 协议',
       ],
-      button: ['开始使用', '开发者后台'],
+      button: ['开始使用'],
     },
     documentation: {
       title: '文档资料',
-      left: [
+      docs: [
         {
-          title: '使用 Golang 快速入门',
+          title: '主网',
           info: 'F1EX 是 Fox.ONE 的独立交换产品，具有较低的令牌发行成本，高性能，丰富的管理仪表板，多链支持和出色的生态系统。',
           button: '快速开始',
           href: '#',
         },
         {
-          title: '使用 Golang 快速入门',
+          title: '钱包',
+          info: 'F1EX 是 Fox.ONE 的独立交换产品，具有较低的令牌发行成本，高性能，丰富的管理仪表板，多链支持和出色的生态系统。',
+          button: '快速开始',
+          href: '#',
+        },
+        {
+          title: '机器人',
+          info: 'F1EX 是 Fox.ONE 的独立交换产品，具有较低的令牌发行成本，高性能，丰富的管理仪表板，多链支持和出色的生态系统。',
+          button: '快速开始',
+          href: '#',
+        },
+        {
+          title: '学院',
           info: 'F1EX 是 Fox.ONE 的独立交换产品，具有较低的令牌发行成本，高性能，丰富的管理仪表板，多链支持和出色的生态系统。',
           button: '快速开始',
           href: '#',
@@ -236,6 +245,7 @@ export default {
       },
       {
         title: '点对点多签交易系统 - ExinLocal',
+        clamp: 4,
         filename: 'exin-local',
         img: 'exin-local.png',
         date: '2020/5/11',
@@ -243,6 +253,7 @@ export default {
       },
       {
         title: 'ExinOne C2C 币币交易系统',
+        clamp: 4,
         filename: 'exin-c2c',
         img: 'exin-c2c.png',
         date: '2020/5/15',
@@ -257,6 +268,7 @@ export default {
       },
       {
         title: 'W3c.Group 创作者社区通证系统',
+        clamp: 4,
         filename: 'w3c-group',
         img: 'w3c-group.png',
         date: '2020/05/01',
@@ -264,6 +276,7 @@ export default {
       },
       {
         title: '公平可验证骰子游戏 - DICEOS',
+        clamp: 4,
         filename: 'diceos',
         img: 'diceos.png',
         date: '2020/5/27',
@@ -271,6 +284,7 @@ export default {
       },
       {
         title: '去中心化交易所 - Ocean ONE',
+        clamp: 4,
         filename: 'ocean-one',
         img: 'ocean-one.png',
         date: '2020/05/02',
