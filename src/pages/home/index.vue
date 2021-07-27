@@ -71,67 +71,76 @@
       <a class="button" href="cases">{{ $t('home.button.readmore') }}</a>
     </section>
 
-    <!--  -->
-    <!-- <section class="documentation">
-      <h2
-       
-        
-      >{{$t('home.documentation.title')}}</h2>
-      <div class="container">
-        <ul class="section1">
-          <li
-            v-for="(item,index) in $t('home.documentation.left')"
-            :key="index"
-           
-            
-          >
-            <h3>{{item.title}}</h3>
-            <p>{{item.info}}</p>
-            <a href="#" class="button">{{item.button}}</a>
-          </li>
-        </ul>
-        <ul class="section2">
-          <li
-            v-for="(item,index) in $t('home.documentation.right')"
-            :key="index"
-           
-            
-          >
-            <p>{{item.title}}</p>
-            <a href="#">{{item.info}}</a>
-          </li>
-        </ul>
-      </div>
-    </section>-->
+    <section class="documentation">
+      <h2>{{ $t('home.documentation.title') }}</h2>
+      <ul>
+        <li>
+          <img class="documentation-img" src="@/assets/img/svg/mainnet.svg" />
+          <div class="documentation-content">
+            <a href="/document/mainnet/overview" class="title">Mainnet</a>
+            <a href="/document/mainnet/overview" class="info"
+              >F1EX, a stand alone exchange product by Fox.ONE, with low
+              token-issuance cost, ....F1EX, a stand alone exchange product by
+              Fox.ONE, with low token-issuance cost</a
+            >
+          </div>
+        </li>
+        <li>
+          <img class="documentation-img" src="@/assets/img/svg/wallet.svg" />
+          <div class="documentation-content">
+            <a href="/document/wallet/overview" class="title">Wallet</a>
+            <a href="/document/wallet/overview" class="info"
+              >F1EX, a stand alone exchange product by Fox.ONE, with low
+              token-issuance cost, ....F1EX, a stand alone exchange product by
+              Fox.ONE, with low token-issuance cost</a
+            >
+          </div>
+        </li>
+        <li>
+          <img class="documentation-img" src="@/assets/img/svg/bot.svg" />
+          <div class="documentation-content">
+            <a href="/document/bot/overview" class="title">Bot</a>
+            <a href="/document/bot/overview" class="info"
+              >F1EX, a stand alone exchange product by Fox.ONE, with low
+              token-issuance cost, ....F1EX, a stand alone exchange product by
+              Fox.ONE, with low token-issuance cost</a
+            >
+          </div>
+        </li>
+        <li>
+          <img class="documentation-img" src="@/assets/img/svg/academy.svg" />
+          <div class="documentation-content">
+            <a href="/document/knowledge/glossary/cryptocurrency" class="title"
+              >Academy</a
+            >
+            <a href="/document/knowledge/glossary/cryptocurrency" class="info"
+              >F1EX, a stand alone exchange product by Fox.ONE, with low
+              token-issuance cost, ....F1EX, a stand alone exchange product by
+              Fox.ONE, with low token-issuance cost</a
+            >
+          </div>
+        </li>
+      </ul>
+    </section>
 
     <!--  -->
     <!-- <section class="next-step documentation">
-      <h2>{{$t('home.nextstep.title')}}</h2>
+      <h2>{{ $t('home.nextstep.title') }}</h2>
       <div class="container">
         <ul class="section1">
-          <li
-            v-for="(item,index) in $t('home.nextstep.left')"
-            :key="index"
-           
-            
-          >
-            <p>{{item.info}}</p>
-            <a href="dashboard" class="button">{{item.button}}</a>
+          <li v-for="(item, index) in $t('home.nextstep.left')" :key="index">
+            <p>{{ item.info }}</p>
+            <a href="dashboard" class="button">{{ item.button }}</a>
           </li>
         </ul>
         <ul class="section2">
-          <li
-            v-for="(item,index) in $t('home.nextstep.right')"
-            :key="index"
-           
-            
-          >
-            <p>{{item.title}}</p>
-            <a href="#">{{item.info}}</a>
+          <li v-for="(item, index) in $t('home.nextstep.right')" :key="index">
+            <p>{{ item.title }}</p>
+            <a href="#">{{ item.info }}</a>
           </li>
         </ul>
       </div>
-    </section>-->
+    </section> -->
     <Footer />
   </div>
 </template>
