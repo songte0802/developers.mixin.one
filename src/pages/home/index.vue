@@ -124,23 +124,26 @@
     </section>
 
     <!--  -->
-    <!-- <section class="next-step documentation">
+    <section class="next-step">
       <h2>{{ $t('home.nextstep.title') }}</h2>
       <div class="container">
-        <ul class="section1">
+        <ul class="section section1">
+          <img class="step-img" src="@/assets/img/svg/quotation.svg" />
           <li v-for="(item, index) in $t('home.nextstep.left')" :key="index">
             <p>{{ item.info }}</p>
             <a href="dashboard" class="button">{{ item.button }}</a>
           </li>
         </ul>
-        <ul class="section2">
-          <li v-for="(item, index) in $t('home.nextstep.right')" :key="index">
-            <p>{{ item.title }}</p>
-            <a href="#">{{ item.info }}</a>
-          </li>
-        </ul>
+        <div class="section section2">
+          <ul>
+            <li v-for="(item, index) in $t('home.nextstep.right')" :key="index">
+              <p>{{ item.info }}</p>
+              <a href="#">Contact XXXX</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </section> -->
+    </section>
     <Footer />
   </div>
 </template>

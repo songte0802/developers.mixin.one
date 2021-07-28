@@ -58,7 +58,7 @@ export default {
       left: [
         {
           info: 'Start your next project, explore interactive turorials, and manage your account.',
-          button: 'Go to dashboard',
+          button: 'GO TO DASHBOARD',
           href: '#',
         },
       ],
