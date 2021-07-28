@@ -54,7 +54,10 @@
       <h2>{{ $t('cases.title') }}</h2>
       <ul>
         <li v-for="(item, index) in $t('cases.list').slice(0, 8)" :key="index">
-          <img class="user-cases-img" src="@/assets/img/svg/news.svg" />
+          <img
+            class="user-cases-img"
+            :src="require(`@/assets/img/svg/${item.filename}.svg`)"
+          />
           <div class="user-cases-content">
             <a :href="'/cases/' + item.filename" class="title">{{
               item.title
