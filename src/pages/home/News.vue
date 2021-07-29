@@ -2,11 +2,15 @@
   <div class="news-page">
     <Header />
 
-    <section class="content">
+    <section class="news-list">
       <ul v-if="reloadState">
         <li v-for="(item, index) in viewList" :key="index">
-          <a :href="`/news/${item.filename}`">{{ item.title }}</a>
-          <span>{{ item.date }}</span>
+          <img class="news-img" src="@/assets/img/svg/news-list.svg" />
+          <a class="news-content" :href="`/news/${item.filename}`">
+            <div class="news-title">{{ item.title }}</div>
+            <div class="news-detail">{{ item.info }}</div>
+            <div class="news-time">{{ item.date }}</div>
+          </a>
         </li>
       </ul>
 
@@ -84,29 +88,54 @@ export default {
   position: relative;
   overflow: hidden;
   font-family: 'Maven Pro', sans-serif;
-
-  background: #fdfeff;
+  background: #fafcff;
 }
 
-.content {
-  box-shadow: 0 1.25rem 3.75rem rgba(61, 117, 227, 0.06);
-  border-radius: 0.75rem;
-  padding: 4rem 2.5rem;
+.news-list {
+  font-family: Nunito;
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   li {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 75rem;
+    height: 15.5rem;
+    margin-top: 1.25rem;
+    padding: 3.125rem 2.635rem;
+    background-color: #fff;
+    box-shadow: 0px 8px 40px rgba(18, 43, 91, 0.08);
+    border-radius: 12px;
+    position: relative;
 
-    padding: 0 2.5rem 3.25rem;
+    .news-title {
+      color: #223355;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding-bottom: 0.625rem;
+    }
 
-    font-size: 1.125rem;
+    .news-detail {
+      color: rgba(34, 51, 85, 0.8);
+    }
+
+    .news-time {
+      color: #c8ccde;
+      position: absolute;
+      left: 21.5rem;
+      bottom: 2rem;
+    }
   }
 
   img {
     min-width: 16.375rem;
     max-width: 16.375rem;
-    height: 14rem;
+    height: 10.25rem;
+    margin-right: 2.5rem;
   }
 
   .container {
