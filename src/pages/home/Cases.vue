@@ -1,16 +1,15 @@
 <template>
-  <div class="news-page">
+  <div class="cases-page">
     <Header />
 
-    <section class="content">
+    <section class="cases-list">
       <ul v-if="reloadState">
         <li v-for="(item, index) in viewList" :key="index">
-          <a :href="`/cases/${item.filename}`">
-            <img :src="require(`@/i18n/${$i18n.locale}/cases/${item.img}`)" />
-            <div class="container">
-              <h4>{{ item.title }}</h4>
-              <p v-html="item.info"></p>
-            </div>
+          <img :src="require(`@/i18n/${$i18n.locale}/cases/${item.img}`)" />
+          <a class="cases-content" :href="`/cases/${item.filename}`">
+            <div class="cases-title">{{ item.title }}</div>
+            <div class="cases-detail">{{ item.info }}</div>
+            <div class="cases-time">{{ item.date }}</div>
           </a>
         </li>
       </ul>
@@ -85,30 +84,58 @@ export default {
 <style lang="scss" scoped>
 @import './common.scss';
 
-.news-page {
+.cases-page {
   position: relative;
   overflow: hidden;
   font-family: 'Maven Pro', sans-serif;
-
-  background: #fdfeff;
+  background: #fafcff;
 }
 
-.content {
-  li {
-    padding: 0 0 2.5rem;
-    background-color: #fff;
-    margin-bottom: 3rem;
-    border-bottom: 0.0625rem solid #edf0f5;
+.cases-list {
+  font-family: Nunito;
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  a {
+  li {
     display: flex;
+    width: 75rem;
+    height: 15.5rem;
+    margin-top: 1.25rem;
+    padding: 3.125rem 2.635rem;
+    background-color: #fff;
+    box-shadow: 0px 8px 40px rgba(18, 43, 91, 0.08);
+    border-radius: 12px;
+    position: relative;
+
+    .cases-title {
+      color: #223355;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding-bottom: 0.625rem;
+    }
+
+    .cases-detail {
+      color: rgba(34, 51, 85, 0.8);
+    }
+
+    .cases-time {
+      color: #c8ccde;
+      position: absolute;
+      left: 21.5rem;
+      bottom: 2rem;
+    }
   }
 
   img {
     min-width: 16.375rem;
     max-width: 16.375rem;
-    height: 14rem;
+    height: 10.25rem;
+    margin-right: 2.5rem;
   }
 
   .container {
