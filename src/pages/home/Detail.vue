@@ -71,20 +71,18 @@ export default {
 
 <style lang="scss" scoped>
 .detail-page {
-  background: #fdfeff;
-
   .content {
-    margin: 2.75rem auto;
-    max-width: 52rem;
-    padding: 2.5rem 3.125rem;
-    font-family: 'Maven Pro', sans-serif;
+    margin: 3.75rem auto;
+    max-width: 75rem;
+    padding: 5.1875rem 6.25rem;
 
     display: flex;
     flex-direction: column;
 
     background: #ffffff;
-    box-shadow: 0 1.25rem 3.75rem rgba(61, 117, 227, 0.06);
-    border-radius: 0.75rem;
+    box-shadow: 0px 8px 40px rgba(18, 43, 91, 0.08);
+    border-radius: 1.25rem;
+    font-family: Nunito, sans-serif;
   }
 
   nav {
@@ -97,19 +95,21 @@ export default {
   }
 
   h2 {
-    font-size: 1.6rem;
-    color: #2f3032;
+    font-size: 2rem;
+    color: #223355;
   }
 
   .date {
     margin-top: 1.875rem;
     line-height: 1.5rem;
 
-    color: #c7c9d2;
+    color: #c8ccde;
   }
 
   /deep/ .desc {
     margin-top: 2.75rem;
+    color: #223355;
+    font-size: 1.125rem;
 
     li {
       list-style: initial;
@@ -123,6 +123,14 @@ export default {
 
   /deep/ footer {
     margin-top: 10rem;
+  }
+
+  /deep/ pre {
+    background: #f8f8f8;
+    border-radius: 12px;
+    color: #223355;
+    padding: 1.875rem 4rem;
+    margin: 1.875rem 0;
   }
 }
 
