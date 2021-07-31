@@ -60,8 +60,7 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  font-family: sans-serif;
-  background: #fafcff;
+  font-family: Nunito, sans-serif;
   margin-top: 30px;
   padding: 110px 0 30px 0;
 }

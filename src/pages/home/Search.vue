@@ -22,7 +22,10 @@
           >
         </div>
 
-        <p class="info">{{ list.length }} results for "{{ searchKey }}"</p>
+        <p class="info" v-if="list.length > 0">
+          {{ list.length }} results for
+          <span class="keyword">"{{ searchKey }}"</span>
+        </p>
 
         <ul class="search-list">
           <li v-for="(item, idx) in list" :key="idx" class="search-item">
@@ -35,6 +38,10 @@
             <p>{{ item.info }}</p>
           </li>
         </ul>
+
+        <div class="no-result">
+          <p>{{ $t('search.noresult') }}</p>
+        </div>
         <!--        <div>Show more</div>-->
       </div>
     </section>
@@ -149,7 +156,12 @@ function getDocumentItem(origin, route, locale, key, list) {
 
 .content {
   padding: 0;
-  font-family: 'Maven Pro', sans-serif;
+  background-color: #fff;
+  padding: 2.5rem 5.25rem;
+  box-shadow: 0px 8px 40px rgba(18, 43, 91, 0.08);
+  border-radius: 20px;
+  margin: 3.75rem auto;
+  max-width: 75rem;
 }
 
 .search-bar {
@@ -174,30 +186,40 @@ function getDocumentItem(origin, route, locale, key, list) {
 
 .search-content {
   padding: 32px;
+  min-height: 30rem;
+
+  .no-result {
+    text-align: center;
+    margin-top: 12rem;
+  }
 }
 
 .head {
   border-bottom: 1px solid #edf1fa;
   padding: 8px 0;
+  font-size: 1.125rem;
 
   span {
     padding: 8px 4px;
     margin-right: 36px;
-    color: #3f444e;
+    color: #223355;
     opacity: 0.6;
     cursor: pointer;
   }
 
   .active {
     opacity: 1;
-    border-bottom: 2px solid #3f444e;
+    border-bottom: 2px solid #223355;
   }
 }
 
 .info {
   margin-top: 18px;
-  color: #3f444e;
-  opacity: 0.6;
+  color: rgba(34, 51, 85, 0.8);
+
+  .keyword {
+    color: #223355;
+  }
 }
 
 .search-list {
@@ -208,19 +230,19 @@ function getDocumentItem(origin, route, locale, key, list) {
   margin-bottom: 36px;
 
   .title a {
-    font-size: 22px;
+    font-size: 24px;
     color: #3d75e3;
     cursor: pointer;
   }
 
   span {
     display: inline-block;
-    color: #9facc5;
+    color: rgba(34, 51, 85, 0.4);
     margin: 8px 0 12px 0;
   }
 
   p {
-    color: #2f3032;
+    color: #223355;
   }
 }
 

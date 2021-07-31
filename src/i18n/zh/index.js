@@ -126,6 +126,7 @@ export default {
     news: '最新资讯',
     cases: '用户案例',
     docs: '文档资料',
+    noresult: '未搜索到结果，请尝试其他关键字。',
   },
 
   news: {

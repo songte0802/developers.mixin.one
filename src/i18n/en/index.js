@@ -133,6 +133,7 @@ export default {
     news: 'Last News',
     cases: 'Use Cases',
     docs: 'Docs',
+    noresult: 'No results were found. Please try a different keyword.',
   },
   news: {
     title: 'Latest News',

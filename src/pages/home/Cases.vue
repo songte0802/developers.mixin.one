@@ -87,7 +87,7 @@ export default {
 .cases-page {
   position: relative;
   overflow: hidden;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: Nunito, sans-serif;
   background: #fafcff;
 }
 
@@ -236,7 +236,7 @@ button {
     padding: 0 2rem;
     line-height: 3rem;
 
-    font-family: 'Maven Pro', sans-serif;
+    font-family: Nunito, sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
     background: #3d75e3;

@@ -100,7 +100,7 @@ header {
   grid-template-columns: 1fr auto auto;
   align-items: center;
 
-  font-family: 'Maven Pro', sans-serif;
+  font-family: Nunito, sans-serif;
   font-weight: 500;
   line-height: 1.25rem;
   text-align: center;
