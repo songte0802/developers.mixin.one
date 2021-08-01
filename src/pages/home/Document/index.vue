@@ -1,8 +1,7 @@
 <template>
   <div :class="['api-page', showNav && 'api-page-locked']">
     <Header />
-
-    <section>
+    <div class="api-container">
       <el-menu
         :default-active="active_path"
         :class="['path one-path', showNav && 'one-path_active']"
@@ -84,28 +83,31 @@
           </el-menu-item>
         </template>
       </el-menu>
-      <div
-        :class="['modal', showNav && 'modal-active']"
-        @click.self="showNav = !showNav"
-      ></div>
-      <div class="float-menu" v-if="!showNav" @click="showNav = !showNav">
-        <img src="@/assets/img/svg/doc-menus.svg" class="toggle-nav-btn" />
+      <div class="api-right">
+        <section>
+          <div
+            :class="['modal', showNav && 'modal-active']"
+            @click.self="showNav = !showNav"
+          ></div>
+          <div class="float-menu" v-if="!showNav" @click="showNav = !showNav">
+            <img src="@/assets/img/svg/doc-menus.svg" class="toggle-nav-btn" />
+          </div>
+          <div class="container">
+            <div class="markdown-body" v-html="page"></div>
+            <template v-if="path">
+              <a target="_blank" :href="githubView" class="github-view">{{
+                $t('home.documentation.github.view')
+              }}</a
+              ><br />
+              <a target="_blank" :href="githubEdit" class="github-edit">{{
+                $t('home.documentation.github.edit')
+              }}</a>
+            </template>
+          </div>
+        </section>
+        <Footer />
       </div>
-      <div class="container">
-        <div class="markdown-body" v-html="page"></div>
-        <template v-if="path">
-          <a target="_blank" :href="githubView" class="github-view">{{
-            $t('home.documentation.github.view')
-          }}</a
-          ><br />
-          <a target="_blank" :href="githubEdit" class="github-edit">{{
-            $t('home.documentation.github.edit')
-          }}</a>
-        </template>
-      </div>
-    </section>
-
-    <Footer />
+    </div>
   </div>
 </template>
 

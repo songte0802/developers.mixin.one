@@ -81,3 +81,17 @@
     url('./roboto/roboto-mono-v4-latin-500.woff2') format('woff2'),
     url('./roboto/roboto-mono-v4-latin-500.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 400;
+  src: local('Nunito Regular'), local('Nunito-Regular'),
+    url(./Nunito/Nunito-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 500;
+  src: local('Nunito SemiBold'), local('Nunito-SemiBold'),
+    url(./Nunito/Nunito-SemiBold.ttf);
+}
