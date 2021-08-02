@@ -209,8 +209,10 @@
 
   .app-item {
     cursor: pointer;
-    padding: 0 1.875rem 0 1.875rem;
-    height: 3.375rem;
+    margin: 0.3175rem 1.25rem;
+    width: 15rem;
+    line-height: 3.125rem;
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
 
@@ -218,6 +220,7 @@
       width: 1.875rem;
       height: 1.875rem;
       border-radius: 50%;
+      margin-left: 0.875rem;
     }
 
     span {

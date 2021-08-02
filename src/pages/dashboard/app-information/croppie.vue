@@ -88,14 +88,14 @@ export default {
 }
 
 .croppie-page {
-  width: 15rem;
-  height: 15rem;
+  width: 20rem;
+  height: 20rem;
 }
 
 .croppie {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 0.25rem;
   overflow: hidden;
 }
 
@@ -108,7 +108,7 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  border-radius: 50%;
+  border-radius: 0.25rem;
 
   img {
     border-radius: 0;
@@ -122,7 +122,6 @@ export default {
     width: 100%;
     height: 100%;
     cursor: pointer;
-    border-radius: 50%;
   }
 
   p {
