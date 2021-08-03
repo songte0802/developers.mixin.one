@@ -179,8 +179,8 @@ footer {
 
 @media screen and (max-width: 60rem) {
   footer {
-    margin-top: 10rem;
-    padding: 0 0 100px 2rem;
+    margin-top: 5rem;
+    padding: 0;
 
     .container {
       flex-direction: column;
@@ -212,7 +212,7 @@ footer {
       }
 
       li {
-        margin-bottom: 1.88rem;
+        margin-bottom: 0;
       }
     }
   }

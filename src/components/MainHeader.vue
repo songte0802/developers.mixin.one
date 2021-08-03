@@ -213,8 +213,12 @@ header {
 
 @media screen and (max-width: 60rem) {
   header {
-    padding: 1.5rem 1.25rem 0;
+    padding: 0 1.25rem;
     position: relative;
+  }
+
+  .header {
+    padding: 0;
   }
 
   .logo img {
