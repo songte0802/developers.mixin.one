@@ -182,6 +182,49 @@ button {
   .news-page {
     min-width: 20rem;
   }
+
+  .cases-list {
+    li {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      padding: 1.5rem;
+      flex-direction: column;
+      align-items: center;
+      width: auto;
+      height: auto;
+
+      img {
+        margin-right: 0;
+        max-width: none;
+        height: auto;
+        width: 100%;
+      }
+
+      a {
+        max-width: none;
+        text-align: center;
+
+        .cases-title {
+          padding: 1rem 0;
+        }
+
+        .cases-detail {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+        }
+
+        .cases-time {
+          position: static;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
   .content {
     li {
       margin-bottom: 1.25rem;

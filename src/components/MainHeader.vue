@@ -307,6 +307,7 @@ header {
   }
 
   .show {
+    z-index: 999;
     display: block;
   }
 }

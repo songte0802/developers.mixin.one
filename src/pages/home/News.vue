@@ -171,6 +171,37 @@ button {
   .news-page {
     min-width: 20rem;
   }
+  .news-list {
+    li {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      padding: 1.5rem;
+      flex-direction: column;
+      align-items: center;
+      width: auto;
+      height: auto;
+
+      img {
+        margin-right: 0;
+        max-width: none;
+        height: auto;
+      }
+
+      a {
+        max-width: none;
+        text-align: center;
+
+        .news-title {
+          padding: 1rem 0;
+        }
+
+        .news-time {
+          position: static;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
   .content {
     padding: 2rem 1rem;
 

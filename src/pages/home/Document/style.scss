@@ -211,4 +211,10 @@ a:hover {
   .container {
     margin: 0 2rem;
   }
+
+  /deep/ footer {
+    .container {
+      margin: 0;
+    }
+  }
 }
