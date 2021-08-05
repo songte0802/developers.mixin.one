@@ -19,7 +19,7 @@
       </div>
       <div class="btns">
         <button @click="click_submit" class="btns-save primary">
-          {{ $t('button.submit') }}
+          {{ $t('button.save') }}
         </button>
         <button @click="click_cancel" class="btns-cancel primary">
           {{ $t('button.cancel') }}
@@ -210,7 +210,7 @@ label {
       }
 
       label {
-        font-weight: 700;
+        font-weight: 400;
         text-align: left;
         line-height: 1rem;
         margin-bottom: 1rem;
