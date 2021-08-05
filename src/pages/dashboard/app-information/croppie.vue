@@ -144,10 +144,21 @@ export default {
 }
 
 @media screen and (max-width: 70rem) {
-  .file-uploader p {
-    margin-top: 0;
-    position: absolute;
-    left: calc(100% + 1rem);
+  .croppie-page {
+    height: auto;
+  }
+
+  .file-uploader {
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 1rem;
+    box-shadow: 0px 1px 4px rgba(28, 77, 174, 0.0981753);
+
+    p {
+      margin-top: 0;
+      position: absolute;
+      left: calc(100% + 1rem);
+    }
   }
 }
 </style>

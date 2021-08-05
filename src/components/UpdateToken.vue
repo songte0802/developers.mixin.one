@@ -4,19 +4,22 @@
       <h3>{{ $t('wallet.update_token') }}</h3>
       <div class="edit-item">
         <label>Session ID</label>
-        <input v-model="submit_form.session_id" />
+        <input v-model="submit_form.session_id" placeholder="Session ID" />
       </div>
       <div class="edit-item">
         <label>Pin Token</label>
-        <input v-model="submit_form.pin_token" />
+        <input v-model="submit_form.pin_token" placeholder="Pin Token" />
       </div>
       <div class="edit-item">
         <label>Private Key</label>
-        <textarea v-model="submit_form.private_key"></textarea>
+        <textarea
+          v-model="submit_form.private_key"
+          placeholder="Private Key"
+        ></textarea>
       </div>
       <div class="btns">
         <button @click="click_submit" class="btns-save primary">
-          {{ $t('button.save') }}
+          {{ $t('button.submit') }}
         </button>
         <button @click="click_cancel" class="btns-cancel primary">
           {{ $t('button.cancel') }}

@@ -59,8 +59,8 @@ input {
   height: 4rem;
   font-size: 1rem;
   padding: 0 1.25rem;
-  border-radius: 0.25rem;
-  box-shadow: 0 0.0625rem 0.25rem 0 rgba(28, 77, 174, 0.1);
+  box-shadow: 0px 1px 4px rgba(125, 137, 155, 0.3);
+  border-radius: 0.375rem;
 
   &::-webkit-input-placeholder {
     color: #a9b0bf;
@@ -75,7 +75,7 @@ input {
   }
 
   &:disabled {
-    background: #eceef2;
+    background: #ebedf2;
     color: #a9b0bf;
     box-shadow: none;
   }

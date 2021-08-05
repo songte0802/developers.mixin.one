@@ -1124,6 +1124,7 @@ export default {
   },
   button: {
     save: 'Save',
+    submit: 'Submit',
     cancel: 'Cancel',
     withdrawal: 'Withdrawal',
     update: 'UPDATE',

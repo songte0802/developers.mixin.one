@@ -1261,6 +1261,7 @@ export default {
   },
   button: {
     save: '保存',
+    submit: '提交',
     cancel: '取消',
     withdrawal: '提现',
     update: '更新',
