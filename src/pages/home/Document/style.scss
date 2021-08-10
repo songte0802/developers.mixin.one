@@ -172,11 +172,12 @@ a:hover {
     margin-left: 3.75rem;
     flex: 1;
     width: calc(100% - 17.5rem);
+    position: relative;
 
     .github-view {
-      margin-top: 5rem;
-      margin-left: 1.2rem;
-      color: #0366d6;
+      position: absolute;
+      top: 0;
+      right: 60px;
     }
 
     .github-edit {
@@ -193,6 +194,21 @@ a:hover {
   padding-left: 1.25rem !important;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.google-trans {
+  position: absolute;
+  right: 124px;
+}
+
+/deep/ #google_translate_element {
+  position: absolute;
+  right: 124px;
+  opacity: 0;
+
+  span {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 75rem) and (min-width: 60.0625rem) {
@@ -212,9 +228,20 @@ a:hover {
     margin: 0 2rem;
   }
 
-  /deep/ footer {
-    .container {
-      margin: 0;
+  .github-view {
+    display: none;
+  }
+
+  /deep/ {
+    footer {
+      .container {
+        margin: 0;
+      }
+    }
+
+    .google-trans,
+    #google_translate_element {
+      display: none;
     }
   }
 }

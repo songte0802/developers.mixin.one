@@ -93,15 +93,17 @@
             <img src="@/assets/img/svg/doc-menus.svg" class="toggle-nav-btn" />
           </div>
           <div class="container">
+            <img
+              class="google-trans"
+              src="@/assets/img/svg/google_trans.svg"
+              alt=""
+            />
+            <div id="google_translate_element"></div>
             <div class="markdown-body" v-html="page"></div>
             <template v-if="path">
-              <a target="_blank" :href="githubView" class="github-view">{{
-                $t('home.documentation.github.view')
-              }}</a
-              ><br />
-              <a target="_blank" :href="githubEdit" class="github-edit">{{
-                $t('home.documentation.github.edit')
-              }}</a>
+              <a target="_blank" :href="githubView" class="github-view">
+                <img src="@/assets/img/svg/github.svg" alt="" />
+              </a>
             </template>
           </div>
         </section>
